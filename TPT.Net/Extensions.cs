@@ -15,7 +15,7 @@ namespace TPT
         /// <param name="localize">should output be localized or remain in UTC timezone?</param>
         /// <param name="isInMilliseconds">Is input in milliseconds or seconds?</param>
         /// <returns></returns>
-        public static DateTime FromUnixtime(long value, bool localize = false, bool isInMilliseconds = true)
+        public static DateTime FromUnixtime(long value, bool localize = false, bool isInMilliseconds = false)
         {
             DateTime result;
 
@@ -40,7 +40,7 @@ namespace TPT
         /// <param name="value">any DateTime object as input</param>
         /// <param name="isInMilliseconds">Should output be in milliseconds or seconds?</param>
         /// <returns></returns>
-        public static long ToUnixtime(this DateTime value, bool isInMilliseconds = true)
+        public static long ToUnixtime(this DateTime value, bool isInMilliseconds = false)
         {
             if (isInMilliseconds)
             {
@@ -49,6 +49,14 @@ namespace TPT
             else
             {
                 return (long)value.ToUniversalTime().Subtract(UNIXTIME_ZERO_POINT).TotalSeconds;
+            }
+        }
+
+        internal static void Overwrite(this byte[] array, byte[] from)
+        {
+            for (int i = 0; i < from.Length; i++)
+            {
+                array[i] = from[i];
             }
         }
     }
