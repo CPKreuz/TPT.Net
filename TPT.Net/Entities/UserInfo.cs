@@ -59,7 +59,7 @@ namespace TPT
         /// <summary>
         /// Get all saves made by this user
         /// </summary>
-        public Task<BrowseResult> GetSaves()
+        public Task<BrowseResult> GetSavesAsync()
         {
             return client.GetBrowseResultAsync(BrowseCategory.ByUser(Username));
         }
