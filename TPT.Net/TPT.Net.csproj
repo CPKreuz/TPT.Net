@@ -12,6 +12,8 @@
     <Version>0.9.0</Version>
     <Copyright>@2020 CPKreuz</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>https://github.com/CPKreuz/TPT.Net</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
