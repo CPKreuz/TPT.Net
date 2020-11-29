@@ -130,6 +130,11 @@ namespace TPT
             Tags = tmp.Tags;
         }
 
+        public Task<UserInfo> GetAuthorAsync()
+        {
+            return client.GetUserAsync(AuthorName);
+        }
+
         /// <summary>
         /// Get the URL to the save
         /// </summary>
